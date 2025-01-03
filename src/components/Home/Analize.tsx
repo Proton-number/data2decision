@@ -24,10 +24,10 @@ export default function Analyze() {
     },
   ];
   return (
-    <div className="px-14 flex flex-col md:flex-row justify-between md:items-center space-y-11 md:space-y-0">
+    <div className="px-14 flex flex-col md:flex-row justify-between md:items-center space-y-11 md:space-y-0 text-center sm:text-left">
       <div className=" space-y-10">
         <h2 className="font-semibold text-5xl">Analyze Effectively</h2>
-        <p className="text-xl w-96">
+        <p className="text-xl sm:w-96">
           We utilize advanced analytics tools to uncover patterns and trends in
           your data.
         </p>
@@ -39,10 +39,10 @@ export default function Analyze() {
         </Button>
       </div>
       <div>
-        <div className=" grid md:grid-cols-2 gap-6 ">
+        <div className=" grid md:grid-cols-2 gap-6 justify-center sm:justify-start">
           {features.map((feature, index) => (
-            <div key={index} className="space-y-2 ">
-              <div className="space-y-2">
+            <div key={index} className="space-y-2   ">
+              <div className="space-y-2 sm:space-y-8 ">
                 <h3 className="font-semibold">{feature.title}</h3>
                 <p className=" text-xs w-96">{feature.description}</p>
               </div>

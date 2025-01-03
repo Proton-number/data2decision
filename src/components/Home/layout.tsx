@@ -5,7 +5,7 @@ import Hero from "./Hero";
 export default function Home() {
   return (
     <div>
-      <div className="min-h-screen justify-center  flex flex-col pb-60  ">
+      <div className="min-h-screen justify-center  flex flex-col pb-14 lg:pb-60  ">
         <Hero />
         <Analyze />
       </div>

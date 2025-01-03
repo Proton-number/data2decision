@@ -82,7 +82,7 @@ function Nav() {
           <Button className="bg-black text-white dark:bg-white dark:text-black">
             Get in touch
           </Button>
-          <div>
+          <div className="hidden md:block">
             <Button size={"icon"} onClick={toggleTheme}>
               <Sun
                 className={`h-5 w-5 transition-all ${
@@ -126,7 +126,7 @@ function Nav() {
         ref={navRef}
         className={`
       fixed top-0 right-0 h-full bg-black dark:bg-white backdrop-blur-lg
-      w-96 z-40 transform transition-transform duration-300 text-white
+      w-80 sm:w-96 z-40 transform transition-transform duration-300 text-white
       ${isNavOpen ? "translate-x-0" : "translate-x-full"}
     `}
       >
@@ -138,12 +138,10 @@ function Nav() {
           >
             <X className="text-black dark:text-white" />
           </Button>
+
           <div className="flex items-start flex-col space-y-32 text-white dark:text-black">
             {location.pathname !== "/" && (
-              <Link
-                to="/"
-                onClick={() => setIsNavOpen(false)}
-              >
+              <Link to="/" onClick={() => setIsNavOpen(false)}>
                 <p className="text-5xl font-bold">Home</p>
               </Link>
             )}
@@ -156,6 +154,24 @@ function Nav() {
             <Link to="/contact" onClick={() => setIsNavOpen(false)}>
               <p className="text-5xl font-bold">Contact</p>
             </Link>
+            <div className="sm:hidden">
+              <Button
+                size={"icon"}
+                onClick={toggleTheme}
+                className=" bg-white dark:bg-black hover:bg-slate-100 text-black dark:text-white"
+              >
+                <Sun
+                  className={`h-5 w-5 transition-all ${
+                    isDarkMode ? "rotate-90 scale-0" : "rotate-0 scale-100"
+                  }`}
+                />
+                <Moon
+                  className={`absolute h-5 w-5 transition-all ${
+                    isDarkMode ? "rotate-0 scale-100" : "rotate-90 scale-0"
+                  }`}
+                />
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
