@@ -66,18 +66,19 @@ function Nav() {
       <nav>
         <div className="p-4 flex flex-row justify-around items-center">
           <div className="flex space-x-4">
-            <Link to="/" className={location.pathname === "/" ? "hidden" : ""}>
-              <p>Home</p>
-            </Link>
-            <Link to="/services">
-              <p>Services</p>
-            </Link>
-            <Link to="/about">
-              <p>About</p>
-            </Link>
-            <Link to="/contact">
-              <p> Contact</p>
-            </Link>
+            {[
+              { path: "/", label: "Home" },
+              { path: "/services", label: "Services" },
+              { path: "/about", label: "About" },
+              { path: "/contact", label: "Contact" },
+            ].map(
+              ({ label, path }) =>
+                location.pathname !== path && (
+                  <Link key={path} to={path}>
+                    <p>{label}</p>
+                  </Link>
+                )
+            )}
           </div>
           <Button className="bg-black text-white dark:bg-white dark:text-black">
             Get in touch
@@ -110,7 +111,7 @@ function Nav() {
               duration: 0.3,
               ease: "easeInOut",
             }}
-            className="fixed top-11 right-6 z-50 p-4 "
+            className="fixed top-11 right-6 z-30 p-4 "
           >
             {!isNavOpen && (
               <Button size="icon" onClick={() => setIsNavOpen(true)}>
@@ -125,7 +126,7 @@ function Nav() {
       <nav
         ref={navRef}
         className={`
-      fixed top-0 right-0 h-full bg-black dark:bg-white backdrop-blur-lg
+    shadow-2xl  fixed top-0 right-0 h-full bg-black dark:bg-white backdrop-blur-lg
       w-80 sm:w-96 z-40 transform transition-transform duration-300 text-white
       ${isNavOpen ? "translate-x-0" : "translate-x-full"}
     `}
@@ -140,20 +141,23 @@ function Nav() {
           </Button>
 
           <div className="flex items-start flex-col space-y-32 text-white dark:text-black">
-            {location.pathname !== "/" && (
-              <Link to="/" onClick={() => setIsNavOpen(false)}>
-                <p className="text-5xl font-bold">Home</p>
-              </Link>
+            {[
+              { path: "/", label: "Home" },
+              { path: "/services", label: "Services" },
+              { path: "/about", label: "About" },
+              { path: "/contact", label: "Contact" },
+            ].map(
+              ({ path, label }) =>
+                location.pathname !== path && (
+                  <Link
+                    key={path}
+                    to={path}
+                    onClick={() => setIsNavOpen(false)}
+                  >
+                    <p className="text-5xl font-bold">{label}</p>
+                  </Link>
+                )
             )}
-            <Link to="/services" onClick={() => setIsNavOpen(false)}>
-              <p className="text-5xl font-bold">Services</p>
-            </Link>
-            <Link to="/about" onClick={() => setIsNavOpen(false)}>
-              <p className="text-5xl font-bold">About</p>
-            </Link>
-            <Link to="/contact" onClick={() => setIsNavOpen(false)}>
-              <p className="text-5xl font-bold">Contact</p>
-            </Link>
             <div className="sm:hidden">
               <Button
                 size={"icon"}
