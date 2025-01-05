@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <div style={{ zIndex: 1 }}>
-        <div className="min-h-screen justify-center  flex flex-col pb-14 lg:pb-60  relative">
+        <div className="min-h-screen justify-center  flex flex-col pb-14 lg:pb-60  relative space-y-6">
           <Hero />
 
           <Analyze />

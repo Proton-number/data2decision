@@ -11,16 +11,18 @@ function Work() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-200 text-black p-4 space-y-14 sm:space-y-28  ">
-      <div className="text-center space-y-6">
-        <h1 className="font-bold text-7xl sm:text-8xl ">Our work</h1>
-        <p className="opacity-65">A Glimpse into Our Impactful Projects.</p>
+    <div className="min-h-screen bg-gray-200 text-black p-4 space-y-28 sm:space-y-28  ">
+      <div className="text-center space-y-8">
+        <h1 className="font-bold text-5xl sm:text-6xl ">Our work</h1>
+        <p className="opacity-65 text-sm">
+          A Glimpse into Our Impactful Projects.
+        </p>
       </div>
 
       <div className="flex overflow-hidden space-x-4 group">
         <div className="flex space-x-6 animate-loop-scroll group-hover:paused">
           {marquee.map((item, index) => (
-            <div key={index} className="w-[600px] h-96">
+            <div key={index} className=" w-[400px] sm:w-[600px] h-80 sm:h-96">
               <img
                 src={item.image}
                 alt=""
@@ -35,7 +37,7 @@ function Work() {
           aria-hidden="true"
         >
           {marquee.map((item, index) => (
-            <div key={index} className="w-[600px] h-96">
+            <div key={index} className=" w-[400px] sm:w-[600px] h-80 sm:h-96">
               <img
                 src={item.image}
                 alt=""
