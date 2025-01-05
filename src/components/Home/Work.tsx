@@ -11,7 +11,7 @@ function Work() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-200 p-4 space-y-14 sm:space-y-28  ">
+    <div className="min-h-screen bg-gray-200 text-black p-4 space-y-14 sm:space-y-28  ">
       <div className="text-center space-y-6">
         <h1 className="font-bold text-7xl sm:text-8xl ">Our work</h1>
         <p className="opacity-65">A Glimpse into Our Impactful Projects.</p>
