@@ -4,6 +4,7 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { appStore } from "./Store/appStore";
+import CenterUnderline from "./animation/CenterUnderline ";
 function Nav() {
   const location = useLocation();
   const {
@@ -75,7 +76,7 @@ function Nav() {
               ({ label, path }) =>
                 location.pathname !== path && (
                   <Link key={path} to={path}>
-                    <p>{label}</p>
+                    <CenterUnderline label={label} />
                   </Link>
                 )
             )}
@@ -154,7 +155,10 @@ function Nav() {
                     to={path}
                     onClick={() => setIsNavOpen(false)}
                   >
-                    <p className="text-5xl font-bold">{label}</p>
+                    <CenterUnderline
+                      label={label}
+                      className="text-5xl font-bold"
+                    />
                   </Link>
                 )
             )}

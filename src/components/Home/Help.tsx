@@ -1,26 +1,60 @@
-import { Button } from "../ui/button";
-import { ArrowRight } from "lucide-react";
+import { fadeIn } from "@/variants";
+import { motion } from "motion/react";
 
 export default function Help() {
   return (
     <div>
-      <div className="flex flex-col sm:flex-row  justify-between sm:items-end px-14 space-y-11 sm:space-y-0 items-center text-center sm:text-left">
-        <div className="space-y-10">
-          <span className="uppercase">// who we help</span>
-          <h1 className="font-semibold text-5xl sm:-w-56">
-            Effortlessly manage your data
-          </h1>
-          <p className="sm:w-96 font-normal text-lg">
-            Easily manage your datasets and insights in one place, saving time
-            and effort.
-          </p>
+      <div className="flex flex-col justify-center min-h-screen  space-y-2 ">
+        <span className="uppercase px-14 py-20">// how we help</span>
+        <motion.div
+          variants={fadeIn("down", 0.3 )}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          className="flex flex-col lg:flex-row justify-between items-center space-y-4 px-14 py-20 w-full overflow-hidden"
+        >
+          <div>
+            <h1 className="text-6xl font-bold leading-tight text-center sm:text-left w-96">
+              Efficient Data Processing
+            </h1>
+            <p className="text-xl max-w-lg leading-relaxed text-center sm:text-left">
+              Our advanced analytics tools ensure efficient and accurate
+              processing of large volumes of data, saving you time and
+              resources.
+            </p>
+          </div>
+          <div className="m-auto sm:m-0 flex justify-center sm:justify-start">
+            <div
+              style={{ width: "300px", background: "blue", height: "300px" }}
+            />
+          </div>
+        </motion.div>
+
+        <div className="px-14 py-20  bg-white text-black ">
+          <motion.div
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex flex-col lg:flex-row justify-between items-center space-y-4 w-full"
+          >
+            <div>
+              <h1 className="text-6xl font-bold leading-tight text-center sm:text-left w-96">
+                Customized Solutions
+              </h1>
+              <p className="text-xl max-w-lg leading-relaxed text-center sm:text-left">
+                We understand that every business is unique, which is why we
+                offer tailor-made solutions to meet your specific needs and
+                goals.
+              </p>
+            </div>
+            <div className="m-auto sm:m-0 flex justify-center sm:justify-start">
+              <div
+                style={{ width: "300px", background: "blue", height: "300px" }}
+              />
+            </div>
+          </motion.div>
         </div>
-        <Button className="group relative h-12 w-40 overflow-hidden  bg-white text-lg dark:bg-black/75 shadow-2xl dark:shadow-2xl font-bold">
-          <div className="absolute inset-0 w-0 bg-black dark:bg-white transition-all duration-1000 ease-out group-hover:w-full" />
-          <span className="relative flex items-center justify-center space-x-4 text-black dark:text-white transition-colors duration-300 group-hover:text-white dark:group-hover:text-black">
-            Read more <ArrowRight className="h-5 w-5 ml-2" />
-          </span>
-        </Button>
       </div>
     </div>
   );

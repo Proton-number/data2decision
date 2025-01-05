@@ -1,22 +1,34 @@
-import { motion } from "motion/react";
+import RandomLetterSwapPingPong from "../animation/RandomLetterSwapPingPong";
 
 export default function Footer() {
   return (
     <div>
-      <footer className="relative min-h-52 bg-pink-500" style={{ zIndex: 2 }}>
-        This is a footer
-      </footer>
-      <motion.aside
-        initial={{ opacity: 0, y: 80, scale: 0.8 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="dark:bg-neutral-900 min-h-[50vh] items-center justify-center flex sticky bottom-0 z-0"
+      <footer
+        className="relative flex min-h-screen bg-black dark:bg-white text-white dark:text-black"
+        style={{ zIndex: 2 }}
       >
-        <h2 className="font-bold text-6xl sm:text-9xl text-center">
-          Data To Decison
-        </h2>
-      </motion.aside>
+        <div className="flex flex-col w-full px-14 py-20">
+          <h2 className="sm:text-9xl font-bold">
+            Exploring <br /> Data,
+          </h2>
+          <div className="flex-grow" />
+          <h2 className="sm:text-9xl font-bold self-end text-right">
+            Enhancing <br /> Vision.
+          </h2>
+        </div>
+      </footer>
+
+      <aside className="dark:bg-neutral-900 min-h-[50vh] items-center justify-center flex sticky bottom-0 z-0">
+        <div className="w-full h-full rounded-lg bg-white text-3xl md:text-5xl flex flex-col items-center justify-center font-overusedGrotesk">
+          <div className="h-full  rounded-xl py-12  align-text-center gap-y-1 md:gap-y-2 flex flex-col justify-center items-center">
+            <RandomLetterSwapPingPong
+              label=" Data To Decison!"
+              reverse={false}
+              className=" font-bold text-6xl sm:text-9xl text-center"
+            />
+          </div>
+        </div>
+      </aside>
     </div>
   );
 }
