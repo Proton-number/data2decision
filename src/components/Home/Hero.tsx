@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-gray-900/[0.04] dark:bg-grid-white/[0.02]" />
 
       <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center  mx-auto">
           {/* Text content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

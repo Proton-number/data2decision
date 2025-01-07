@@ -101,7 +101,7 @@ function Nav() {
 
             {/* Action Buttons */}
             <div className="flex items-center space-x-4">
-              <Button className="bg-gradient-to-r bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:shadow-xl  hover:opacity-90 transition-opacity">
+              <Button className="bg-gradient-to-r bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:shadow-xl  hover:opacity-90 transition-opacity hidden md:block">
                 Get in touch
               </Button>
 

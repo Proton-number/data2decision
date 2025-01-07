@@ -1,15 +1,14 @@
-import Home from "./components/Home/layout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home/layout";
 import Nav from "./components/Nav";
 import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
-import "./App.css";
 import Footer from "./components/Home/Footer";
 
 function App() {
   return (
-    <div >
+    <div>
       <Router>
         <Nav />
         <Routes>
