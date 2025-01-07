@@ -1,68 +1,106 @@
-import { fadeIn } from "@/variants";
+import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function Help() {
   return (
-    <div>
-      <div className="flex flex-col justify-center min-h-screen  space-y-2 ">
-        <span className="uppercase px-14 py-20">// how we help</span>
+    <div className="relative bg-black dark:bg-white text-white dark:text-black">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(50,50,255,0.1),transparent_40%)]" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24">
+        {/* Section header */}
         <motion.div
-          variants={fadeIn("down", 0.3)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.3 }}
-          className="flex flex-col lg:flex-row justify-between items-center space-y-4 px-14 py-20 w-full overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-24"
         >
-          <div className="space-y-6">
-            <h1 className="text-5xl sm:text-6xl font-bold leading-tight text-left lg:w-96">
-              Efficient Data Processing
-            </h1>
-            <p className="text-sm  max-w-sm  lg:max-w-lg leading-relaxed text-left">
+          <span className="text-sm font-mono text-gray-400 dark:text-gray-600 tracking-wider">
+            // HOW WE HELP
+          </span>
+        </motion.div>
+
+        {/* First Feature */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="grid lg:grid-cols-2 gap-16 items-center mb-40"
+        >
+          <div className="space-y-8">
+            <h2 className="text-5xl lg:text-6xl font-bold leading-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 dark:from-black dark:to-gray-600">
+                Efficient Data Processing
+              </span>
+            </h2>
+            <p className="text-lg text-gray-400 dark:text-gray-600 max-w-lg">
               Our advanced analytics tools ensure efficient and accurate
               processing of large volumes of data, saving you time and
               resources.
             </p>
-          </div>
-          <div className="m-auto sm:m-0 flex justify-center sm:justify-start">
-            <div className=" sm:w-[640px] lg:w-[600px] ">
-              <img
-                src="/photo-1454165804606-c3d57bc86b40.png"
-                alt="data-img"
-                className="object-fill"
-              />
+            <div className="flex items-center text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors cursor-pointer group">
+              <span className="mr-2">Learn more</span>
+              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
             </div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl blur-2xl" />
+            <img
+              src="/photo-1454165804606-c3d57bc86b40.png"
+              alt="Data processing visualization"
+              className="relative rounded-2xl shadow-2xl w-full object-cover hover:scale-[1.02] transition-transform duration-500"
+            />
+          </motion.div>
         </motion.div>
 
-        <div className="px-14 py-20 space-y-6  bg-white text-black dark:bg-black dark:text-white ">
-          <motion.div
-            variants={fadeIn("up", 0.2)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex flex-col lg:flex-row justify-between lg:items-center space-y-4 w-full"
-          >
-            <div className="space-y-6 ">
-              <h1 className=" text-5xl sm:text-6xl max-w-xs  font-bold leading-tight text-left ">
+        {/* Second Feature */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="grid lg:grid-cols-2 gap-16 items-center"
+        >
+          <div className="space-y-8 lg:order-2">
+            <h2 className="text-5xl lg:text-6xl font-bold leading-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 dark:from-black dark:to-gray-600">
                 Customized Solutions
-              </h1>
-              <p className="text-sm max-w-xs lg:max-w-lg leading-relaxed text-left ">
-                We understand that every business is unique, which is why we
-                offer tailor-made solutions to meet your specific needs and
-                goals.
-              </p>
+              </span>
+            </h2>
+            <p className="text-lg text-gray-400 dark:text-gray-600 max-w-lg">
+              We understand that every business is unique, which is why we offer
+              tailor-made solutions to meet your specific needs and goals.
+            </p>
+            <div className="flex items-center text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors cursor-pointer group">
+              <span className="mr-2">Explore solutions</span>
+              <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
             </div>
-            <div className="m-auto sm:m-0 flex justify-center sm:justify-start">
-              <div className="  sm:w-[640px] lg:w-[600px]">
-                <img
-                  src="/photo-1516383274235-5f42d6c6426d.png"
-                  alt="data-img2"
-                  className="object-fill"
-                />
-              </div>
-            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative lg:order-1"
+          >
+            <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl blur-2xl" />
+            <img
+              src="/photo-1516383274235-5f42d6c6426d.png"
+              alt="Customized solutions visualization"
+              className="relative rounded-2xl shadow-2xl w-full object-cover hover:scale-[1.02] transition-transform duration-500"
+            />
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

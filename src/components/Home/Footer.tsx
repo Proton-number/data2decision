@@ -1,22 +1,35 @@
+import { motion } from "motion/react";
 import RandomLetterSwapPingPong from "../animation/RandomLetterSwapPingPong";
-
 export default function Footer() {
   return (
-    <div>
-      <footer
-        className="relative flex min-h-screen bg-black dark:bg-white text-white dark:text-black"
+    <div className="relative">
+      <motion.footer
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="relative min-h-screen bg-black dark:bg-white text-white dark:text-black overflow-hidden"
         style={{ zIndex: 2 }}
       >
-        <div className="flex flex-col w-full px-14 py-20">
-          <h2 className=" text-6xl sm:text-9xl font-bold">
-            Exploring <br /> Data,
-          </h2>
-          <div className="flex-grow" />
-          <h2 className=" text-6xl sm:text-9xl font-bold self-end text-right">
-            Enhancing <br /> Vision.
-          </h2>
+        <div className="container mx-auto flex flex-col justify-between h-full px-6 md:px-14 py-20">
+          <motion.h2
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold leading-tight"
+          >
+            Exploring <br className="hidden sm:block" /> Data,
+          </motion.h2>
+
+          <motion.h2
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold self-end text-right leading-tight mt-auto"
+          >
+            Enhancing <br className="hidden sm:block" /> Vision.
+          </motion.h2>
         </div>
-      </footer>
+      </motion.footer>
 
       <aside className="dark:bg-neutral-900 min-h-[50vh] items-center justify-center flex sticky bottom-0 z-0">
         <div className="w-full h-full rounded-lg  text-3xl md:text-5xl flex flex-col items-center justify-center font-overusedGrotesk">
