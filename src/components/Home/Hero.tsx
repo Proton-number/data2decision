@@ -4,13 +4,7 @@ import { motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center py-24 sm:0">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800" />
-
-      {/* Grid background pattern */}
-      <div className="absolute inset-0 bg-grid-gray-900/[0.04] dark:bg-grid-white/[0.02]" />
-
+    <div className="relative min-h-screen flex items-center py-24 sm:0 hero">
       <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center  mx-auto">
           {/* Text content */}
@@ -27,7 +21,7 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed">
+            <p className="text-lg text-gray-600 dark:text-gray-50 max-w-lg leading-relaxed">
               Transform your raw data into actionable insights with ease. Our
               platform bridges the gap between complex data and smart business
               decisions.
