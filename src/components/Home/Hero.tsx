@@ -16,12 +16,12 @@ export default function Hero() {
             className="space-y-8"
           >
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300 dark:from-white dark:to-gray-300">
                 DATA TO DECISION
               </span>
             </h1>
 
-            <p className="text-lg text-gray-600 dark:text-gray-50 max-w-lg leading-relaxed">
+            <p className="text-lg text-gray-100 dark:text-gray-50 max-w-lg leading-relaxed">
               Transform your raw data into actionable insights with ease. Our
               platform bridges the gap between complex data and smart business
               decisions.

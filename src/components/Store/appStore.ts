@@ -7,6 +7,8 @@ interface Appstore {
   setIsDarkMode: (val: boolean) => void;
   visibility: boolean;
   setVisibility: (val: boolean) => void;
+  activeService: number;
+  setActiveService: (val: number) => void;
 }
 export const appStore = create<Appstore>((set) => ({
   isNavOpen: false,
@@ -19,4 +21,8 @@ export const appStore = create<Appstore>((set) => ({
   },
   visibility: false,
   setVisibility: (val) => set({ visibility: val }),
+  activeService: 0,
+  setActiveService(val) {
+    set({ activeService: val });
+  },
 }));
